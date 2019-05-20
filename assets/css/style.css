@@ -1,0 +1,30 @@
+.background-container {
+    margin-left: 25%;
+    margin-top:5%;
+    height:500px;
+    width:45%;
+    background-color:red;
+}
+
+.header-container {
+    padding:10%;
+    font-size:30px;
+    margin-left:18%;
+}
+
+.body-container {
+    background-color:white;
+    margin-top:-5%;
+    height:65%;
+    width:70%;
+    margin-left:15%;
+}
+
+#time-remaining,
+#questions,
+#answers {
+    padding:5%;
+    margin-left:15%;
+    font-size:25px;
+}
+

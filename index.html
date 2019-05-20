@@ -1,12 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Advance Trivia Game</title>
-    </head>
-    <body>
 
+<head>
+    <title>Advance Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-        
-    </body>
+</head>
+
+<body>
+
+    <!-- 
+  start page with a start button that switches to game screen
+  timer starts at 30 and ticks down every second until zero
+  displays first question and shows four button answers that are clickable
+  once an answer is picked or timer reaches zero display the correct answer (with a gif/picture)
+  automatically switch to next question after (5?) seconds and display new question with new answers and reset timer at 30 seconds
+  after all answers are picked display a stats screen with correct / wrong amount as well as a restart button that will start 
+  the game over
+   -->
+<div class = "background-container">
+        <div id="start-screen">
+            <button id = "start-timer">Start Trivia Quiz</button>
+        </div>
+   <div class = "header-container">
+        <div class = "row">
+            <div class = "col-md-12">
+                Trivia Game Title Here
+            </div>
+        </div>
+    </div>
+    
+<div class = "body-container" id = "game">
+    <div class = "row" id = "time-remaining">
+         <span id = "timeRemainingCounter">0</span>
+    </div>
+
+    <div class = "row" id ="questions">
+        <!-- <span id = "questionText"></span> -->
+    </div>
+
+    <div class ="row" id ="answers">
+        <span>Answers here</span>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+
 </html>
