@@ -259,7 +259,7 @@ $(document).ready(function () {
     }
 
     function restartGame() {
-        var quotes = [{
+        quotes = [{
             question: 'Whats the first word uttered in the first ever episode of Friends?',
             answers: ['Theres', 'Come', 'So', 'Its'],
             correct: 'Theres',

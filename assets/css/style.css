@@ -1,7 +1,8 @@
 body {
   /* background-image: url("../images/friends-background.png"); */
 
-	background-image: url("../images/ny-background.jpg");
+  /* background-image: url("../images/ny-background.jpg"); */
+  background-image: url("../images/ny-blackwhite-background.jpg")
 }
 
 .background-container {
