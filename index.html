@@ -14,10 +14,10 @@
    <div class = "header-container">
         <div class = "row"> 
             <div class = "col-md-12" id = "header">
-                <h2 id = "headerText">Friend's Trivia Quiz</h2>
+                <h2 id = "fontText">Friend's Trivia Quiz</h2>
             </div>
-            <span id = "correctAnswerTotal"></span>
-            <span id = "incorrectAnswerTotal"></span>
+            <p id = "correctP">Correct: <span id = "correctAnswerTotal"></span></p>
+            <p id = "incorrectP">Incorrect: <span id = "incorrectAnswerTotal"></span></p>
         </div>
     </div>  
     <!-- 
@@ -34,16 +34,22 @@
     
     
     <div id="start-screen">
-           <div class = "row">
+           <div class = "row" id ="picture-border">
             <div id ="main-picture"></div>
             </div>
             <button id = "start-timer">Start Quiz</button>
+            <div class ="start-paragraph">
+            <h2 id ="instructions">Instructions:</h2>
+            <p id ="start-p">-This trivia game will contain 10 challenging questions from the T.V show Friends. <br>
+                -You will have up to 50 seconds to answer each question <br> -If no answer is selected the question is skipped and you will be marked incorrect. <br>
+                -GL!</p>
         </div>
+    </div>
   
     
 <div class = "body-container" id = "game">
     <div class = "row" id = "time-remaining">
-         <span id = "timeRemainingCounter">0</span>
+         <span id = "timeRemainingCounter">Best of Luck!</span>
     </div>
 
     <div class = "row" id ="questions">

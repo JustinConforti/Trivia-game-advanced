@@ -12,8 +12,8 @@ $(document).ready(function () {
     $("#stat-screen").hide();
     $("#start-timer").on("click", startGame);
     $("#restart-button").on("click", restartGame);
-    
-    $("#main-picture").html("<img src=assets/images/group-picture.jpg height='250px' width='500px'>");
+
+    $("#main-picture").html("<img src=assets/images/group-picture.jpg height='400px' width='500px'>");
 
     let answerField = document.getElementById("answers");
     let questionsField = document.getElementById("questions");
@@ -36,40 +36,58 @@ $(document).ready(function () {
 
 
     var quotes = [{
-            question: 'Sometimes the right path is not the easiest one.',
-            answers: ['Finding Nemo', 'Pocahontas', 'The AristoCats', 'Peter Pan'],
-            correct: 'Pocahontas',
-            images: ["assets/images/mouses.jpg"]
+            question: 'Whats the first word uttered in the first ever episode of Friends?',
+            answers: ['Theres', 'Come', 'So', 'Its'],
+            correct: 'Theres',
+            images: ["assets/images/friends-trivia01.jpg"]
         },
         {
-            question: "Ohana means family, and family means no one gets left behind or forgotten.",
-            answers: ['Lilo &amp; Stitch', 'Mulan', 'Cinderella', 'Fox &amp; the Hound'],
-            correct: 'Lilo &amp; Stitch',
-            images: ["assets/images/mouses.jpg"]
+            question: "Which of these is never a message on Joey and Chandlers doodle board?",
+            answers: ['Clean up the duck feathers in the hallway!', 'Whats up bro?', 'Thanks for all your stuff', 'Joey - call your mom'],
+            correct: 'Joey - call your mom',
+            images: ["assets/images/friends-trivia02.jpg"]
         },
         {
-            question: "The flower that blooms in adversity is the most rare and beaufitul of them all.",
-            answers: ['Lion King', 'Pocahontas', 'Mulan', 'Pinocchio'],
-            correct: 'Mulan',
-            images: ["assets/images/mouses.jpg"]
+            question: "What is Chandlers boss' wife's name?",
+            answers: ['Jenny', 'Kara', 'Petra', 'Lisa'],
+            correct: 'Kara',
+            images: ["assets/images/friends-trivia03.jpg"]
         },
         {
-            question: "Ladies do not start fights, but they can finish them.",
-            answers: ['The AristoCats', 'Alice in Wonderland', 'Lion King', 'Peter Pan'],
-            correct: 'The AristoCats',
-            images: ["assets/images/mouses.jpg"]
+            question: "What was the name of Phoebe's ex who ate chalk?",
+            answers: ['Chris', 'Luke', 'Carl', 'Matt'],
+            correct: 'Carl',
+            images: ["assets/images/friends-trivia04.jpg"]
         },
         {
-            question: "Nothing's impossible.",
-            answers: ['Dumbo', 'Lilo &amp; Stitch', 'Finding Nemo', 'Alice in Wonderland'],
-            correct: 'Alice in Wonderland',
-            images: ["assets/images/mouses.jpg"]
+            question: "According to Ross in 'The One With The Cop', how many times did he and Rachel do it?",
+            answers: ['298', '189', '302', '246'],
+            correct: '298',
+            images: ["assets/images/friends-trivia05.jpg"]
         },
         {
-            question: "Second star to the right and straight on 'til morning",
-            answers: ['Aladdin', 'Toy Story', 'Cinderella', 'Peter Pan'],
-            correct: 'Peter Pan',
-            images: ["assets/images/mouses.jpg"]
+            question: "How many episodes does Mike appear in through out the series?",
+            answers: ['34', '28', '18', '15'],
+            correct: '18',
+            images: ["assets/images/friends-trivia06.jpg"]
+        },
+        {
+            question: "In which episode does Joey explain what a 'moo point' is?",
+            answers: ['The One with Monicas Thunder', 'The One with All the Candy', 'The One Where Rosita Dies', 'The One Where Chandler Doesnt Like Dogs'],
+            correct: 'The One Where Chandler Doesnt Like Dogs',
+            images: ["assets/images/friends-trivia07.jpg"]
+        },
+        {
+            question: "In the episode where Joey competes with a fellow cologne spitzer, what is his nemesises name?",
+            answers: ['The Cowboy', 'The Hombre Man', 'The Cologne Master', 'Fellow Cologne'],
+            correct: 'The Hombre Man',
+            images: ["assets/images/friends-trivia08.jpg"]
+        },
+        {
+            question: "Which of these is Ross not allergic to?",
+            answers: ['Lobster','Peanuts','Kiwi','Dust'],
+            correct: 'Dust',
+            images: ["assets/images/friends-trivia09.jpg"]
         }
     ];
 
@@ -82,7 +100,7 @@ $(document).ready(function () {
 
 
             clockRunning = true;
-            timeRemaining = 5;
+            timeRemaining = 40;
             $('#game').show();
             $('#start-screen').hide();
             // populateQuestions()
@@ -157,14 +175,14 @@ $(document).ready(function () {
         answerPicked = true;
         console.log('hey')
         userChoice = $(this).attr("data-value");
-        if (userChoice === quotes[0].correct){
-            correctAnswer ++
-            questionsField.innerText = "You are correct! The answer is " + userChoice
+        if (userChoice === quotes[0].correct) {
+            correctAnswer++
+            questionsField.innerText = "You are correct! The answer was " + "" + userChoice +""
             showImage()
             console.log("correct choice")
         } else {
-            incorrectAnswer ++
-            questionsField.innerText = "The correct answer was " + quotes[0].correct
+            incorrectAnswer++
+            questionsField.innerText = "Incorrect! The correct answer was " + "" + quotes[0].correct + ""
             showImage()
             console.log("incorrect choice")
         }
@@ -186,17 +204,17 @@ $(document).ready(function () {
         //     let questionsField = document.getElementById("questions")
         answerField.innerText = ""
         let answerPicture = $("<img>")
-        $(answerPicture).attr("src", quotes[0].images[0])
+        $(answerPicture).attr("src", quotes[0].images[0]).addClass("image-display")
         answerPicture.appendTo("#questions")
 
-        if(answerPicked === false ) {
+        if (answerPicked === false) {
             questionsField.innerText = "You ran out of time, make sure you pick an answer next time"
             answerField.innerText = "The correct answer was " + quotes[0].correct
-            incorrectAnswer ++
+            incorrectAnswer++
 
         }
-        incorrectAnswerDisplay.innerText = incorrectAnswer
-        correctAnswerDisplay.innerText = correctAnswer
+        // incorrectAnswerDisplay.innerText = incorrectAnswer
+        // correctAnswerDisplay.innerText = correctAnswer
 
         // answerField.innerText = ""
         imageTime = setInterval(function () {
@@ -223,13 +241,15 @@ $(document).ready(function () {
         let answerField = document.getElementById("answers")
         let questionsField = document.getElementById("questions")
         incorrectAnswerDisplay.innerText = incorrectAnswer
+        correctAnswerDisplay.innerText = correctAnswer
+
         questionsField.innerText = ""
         answerField.innerText = ""
         quotes.shift();
         // clearInterval(intervalTime);
         console.log(quotes)
 
-        if(quotes.length > 0) {
+        if (quotes.length > 0) {
             startGame()
         } else {
             console.log("Game Over")
@@ -239,74 +259,94 @@ $(document).ready(function () {
     }
 
     function restartGame() {
-        quotes = [{
-            question: 'Sometimes the right path is not the easiest one.',
-            answers: ['Finding Nemo', 'Pocahontas', 'The AristoCats', 'Peter Pan'],
-            correct: 'Pocahontas',
-            images: ["assets/images/mouses.jpg"]
+        var quotes = [{
+            question: 'Whats the first word uttered in the first ever episode of Friends?',
+            answers: ['Theres', 'Come', 'So', 'Its'],
+            correct: 'Theres',
+            images: ["assets/images/friends-trivia01.jpg"]
         },
         {
-            question: "Ohana means family, and family means no one gets left behind or forgotten.",
-            answers: ['Lilo &amp; Stitch', 'Mulan', 'Cinderella', 'Fox &amp; the Hound'],
-            correct: 'Lilo &amp; Stitch',
-            images: ["assets/images/mouses.jpg"]
+            question: "Which of these is never a message on Joey and Chandlers doodle board?",
+            answers: ['Clean up the duck feathers in the hallway!', 'Whats up bro?', 'Thanks for all your stuff', 'Joey - call your mom'],
+            correct: 'Joey - call your mom',
+            images: ["assets/images/friends-trivia02.jpg"]
         },
         {
-            question: "The flower that blooms in adversity is the most rare and beaufitul of them all.",
-            answers: ['Lion King', 'Pocahontas', 'Mulan', 'Pinocchio'],
-            correct: 'Mulan',
-            images: ["assets/images/mouses.jpg"]
+            question: "What is Chandlers boss' wife's name?",
+            answers: ['Jenny', 'Kara', 'Petra', 'Lisa'],
+            correct: 'Kara',
+            images: ["assets/images/friends-trivia03.jpg"]
         },
         {
-            question: "Ladies do not start fights, but they can finish them.",
-            answers: ['The AristoCats', 'Alice in Wonderland', 'Lion King', 'Peter Pan'],
-            correct: 'The AristoCats',
-            images: ["assets/images/mouses.jpg"]
+            question: "What was the name of Phoebe's ex who ate chalk?",
+            answers: ['Chris', 'Luke', 'Carl', 'Matt'],
+            correct: 'Carl',
+            images: ["assets/images/friends-trivia04.jpg"]
         },
         {
-            question: "Nothing's impossible.",
-            answers: ['Dumbo', 'Lilo &amp; Stitch', 'Finding Nemo', 'Alice in Wonderland'],
-            correct: 'Alice in Wonderland',
-            images: ["assets/images/mouses.jpg"]
+            question: "According to Ross in 'The One With The Cop', how many times did he and Rachel do it?",
+            answers: ['298', '189', '302', '246'],
+            correct: '298',
+            images: ["assets/images/friends-trivia05.jpg"]
         },
         {
-            question: "Second star to the right and straight on 'til morning",
-            answers: ['Aladdin', 'Toy Story', 'Cinderella', 'Peter Pan'],
-            correct: 'Peter Pan',
-            images: ["assets/images/mouses.jpg"]
+            question: "How many episodes does Mike appear in through out the series?",
+            answers: ['34', '28', '18', '15'],
+            correct: '18',
+            images: ["assets/images/friends-trivia06.jpg"]
+        },
+        {
+            question: "In which episode does Joey explain what a 'moo point' is?",
+            answers: ['The One with Monicas Thunder', 'The One with All the Candy', 'The One Where Rosita Dies', 'The One Where Chandler Doesnt Like Dogs'],
+            correct: 'The One Where Chandler Doesnt Like Dogs',
+            images: ["assets/images/friends-trivia07.jpg"]
+        },
+        {
+            question: "In the episode where Joey competes with a fellow cologne spitzer, what is his nemesises name?",
+            answers: ['The Cowboy', 'The Hombre Man', 'The Cologne Master', 'Fellow Cologne'],
+            correct: 'The Hombre Man',
+            images: ["assets/images/friends-trivia08.jpg"]
+        },
+        {
+            question: "Which of these is Ross not allergic to?",
+            answers: ['Lobster','Peanuts','Kiwi','Dust'],
+            correct: 'Dust',
+            images: ["assets/images/friends-trivia09.jpg"]
         }
     ];
-    correctAnswer = 0;
-    incorrectAnswer = 0;
-    // incorrectAnswerDisplay.innerText = incorrectAnswer
-    // correctAnswerDisplay.innerText = correctAnswer
-    $('#start-screen').show();
-    $("#game").hide();
-    $("#stat-screen").hide();
-    startGame()
+
+        correctAnswer = 0;
+        incorrectAnswer = 0;
+        incorrectAnswerDisplay.innerText = incorrectAnswer
+        correctAnswerDisplay.innerText = correctAnswer
+        // incorrectAnswerDisplay.innerText = incorrectAnswer
+        // correctAnswerDisplay.innerText = correctAnswer
+        $('#start-screen').show();
+        $("#game").hide();
+        $("#stat-screen").hide();
+        startGame()
     }
 
-    
-function startSlideshow() {
 
-    // TODO: Use showImage to hold the setInterval to run nextImage.
-    showSlideShowImage = setInterval(nextImage, 3000);
-  
-  }
+    function startSlideshow() {
 
-  function displayImage() { 
-    $("#main-picture").html("<img src=" + images[imageCount] + " height='250px' width='500px'>");
-  }
+        // TODO: Use showImage to hold the setInterval to run nextImage.
+        showSlideShowImage = setInterval(nextImage, 3000);
 
-  function nextImage() {
-    //  TODO: Increment the count by 1.
-    imageCount++;
-    // TODO: If the count is the same as the length of the image array, reset the count to 0.
-    if (imageCount === images.length) {
-      imageCount = 0;
+        function displayImage() {
+            $("#main-picture").html("<img src=" + images[imageCount] + " height='400px' width='500px'>");
+        }
+
+        function nextImage() {
+            //  TODO: Increment the count by 1.
+            imageCount++;
+            // TODO: If the count is the same as the length of the image array, reset the count to 0.
+            if (imageCount === images.length) {
+                imageCount = 0;
+            }
+            displayImage();
+        }
     }
-    displayImage();
-  }
-  startSlideshow()
-  
+    startSlideshow()
+
 })
