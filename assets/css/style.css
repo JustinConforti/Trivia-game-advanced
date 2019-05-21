@@ -1,20 +1,47 @@
+body {
+  /* background-image: url("../images/friends-background.png"); */
+
+	background-image: url("../images/ny-background.jpg");
+}
+
 .background-container {
-    margin-left: 25%;
-    margin-top:5%;
-    height:500px;
-    width:45%;
-    background-color:red;
+  border: 3px double #0fb9fc;
+    margin-left: 21.5%;
+    margin-top:0%;
+    height:725px;
+    width:55%;
+    background-color:rgb(60, 94, 138);
+
 }
 
 .header-container {
-    padding:10%;
     font-size:30px;
-    margin-left:18%;
+    text-align:center;
+    background-color:rgb(98, 157, 235);
+    
+
+    width:50%;
+    margin-left:24%;
+    margin-top:2%; 
+   
+}
+#header {
+  background-color:rgb(60, 94, 138);
+  font-family: 'Oswald', sans-serif;
+  border: 3px double #0fb9fc;
+
+  /* border-top: 3px solid #0fb9fc;
+    border-left: 3px solid #0fb9fc; */
+}
+
+ #headerText {
+  font-size:75px; 
+  text-shadow: 3px 3px #0fb9fc;
+
 }
 
 .body-container {
     background-color:white;
-    margin-top:-5%;
     height:65%;
     width:70%;
     margin-left:15%;
@@ -27,4 +54,65 @@
     margin-left:15%;
     font-size:25px;
 }
+
+#main-picture {
+    margin-top:5%;
+    margin-left:24%;
+}
+
+#start-timer {
+    margin-left:35%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+button{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  
 

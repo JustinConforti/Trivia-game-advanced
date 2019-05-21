@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+   <div class = "header-container">
+        <div class = "row"> 
+            <div class = "col-md-12" id = "header">
+                <h2 id = "headerText">Friend's Trivia Quiz</h2>
+            </div>
+            <span id = "correctAnswerTotal"></span>
+            <span id = "incorrectAnswerTotal"></span>
+        </div>
+    </div>  
     <!-- 
   start page with a start button that switches to game screen
   timer starts at 30 and ticks down every second until zero
@@ -22,16 +30,16 @@
   the game over
    -->
 <div class = "background-container">
-        <div id="start-screen">
-            <button id = "start-timer">Start Trivia Quiz</button>
-        </div>
-   <div class = "header-container">
-        <div class = "row">
-            <div class = "col-md-12">
-                Trivia Game Title Here
+   
+    
+    
+    <div id="start-screen">
+           <div class = "row">
+            <div id ="main-picture"></div>
             </div>
+            <button id = "start-timer">Start Quiz</button>
         </div>
-    </div>
+  
     
 <div class = "body-container" id = "game">
     <div class = "row" id = "time-remaining">
@@ -46,6 +54,14 @@
         <span>Answers here</span>
     </div>
 </div>
+
+    <div class = "container" id = "stat-screen">
+        <h2>Game Over!</h2>
+        <p>Your results:</p>
+        <span id = "correctAnswerTotal"></span>
+            <span id = "incorrectAnswerTotal"></span>
+            <button id ="restart-button">Retake Quiz</button>
+    </div>
 
 </div>
 
